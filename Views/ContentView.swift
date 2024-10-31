@@ -9,33 +9,36 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                Button(action: { showingDatePicker = true }) {
-                    Text(selectedDate, format: .dateTime.month(.wide).year())
-                        .font(.title)
-                        .foregroundColor(.primary)
-                }
+            VStack {
+                Spacer()
                 
-                CalendarGridView(
-                    date: selectedDate,
-                    store: store,
-                    onDateTap: { date in
-                        selectedDate = date
-                        showingCalorieInput = true
+                VStack(spacing: 20) {
+                    Button(action: { showingDatePicker = true }) {
+                        Text(selectedDate, format: .dateTime.month(.wide).year())
+                            .font(.title)
+                            .foregroundColor(.primary)
                     }
-                )
-                
-                HStack {
-                    Text("Daily Calorie Goal:")
-                    Button("\(store.calorieGoal)") {
-                        showingGoalInput = true
+                    
+                    CalendarGridView(
+                        date: selectedDate,
+                        store: store,
+                        onDateTap: { date in
+                            selectedDate = date
+                            showingCalorieInput = true
+                        }
+                    )
+                    
+                    HStack {
+                        Text("Daily Calorie Goal:")
+                        Button("\(store.calorieGoal)") {
+                            showingGoalInput = true
+                        }
                     }
+                    .padding()
                 }
-                .padding()
                 
                 Spacer()
             }
-            .padding(.top)
             .navigationBarHidden(true)
             .sheet(isPresented: $showingDatePicker) {
                 DatePicker(

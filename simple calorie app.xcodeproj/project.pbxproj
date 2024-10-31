@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ACD4D72C2CD3136100560758 /* simple-calorie-app-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "simple-calorie-app-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ACE77C392CD303B6004A6EB2 /* simple calorie app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple calorie app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE77C3C2CD303B6004A6EB2 /* simple_calorie_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_calorie_appApp.swift; sourceTree = "<group>"; };
 		ACE77C402CD303B7004A6EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		ACE77C3B2CD303B6004A6EB2 /* simple calorie app */ = {
 			isa = PBXGroup;
 			children = (
+				ACD4D72C2CD3136100560758 /* simple-calorie-app-Info.plist */,
 				ACE77C752CD305CA004A6EB2 /* simple calorie app.entitlements */,
 				ACE77C3C2CD303B6004A6EB2 /* simple_calorie_appApp.swift */,
 				ACE77C402CD303B7004A6EB2 /* Assets.xcassets */,
@@ -477,6 +479,7 @@
 				DEVELOPMENT_TEAM = 92UWWT3XL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "simple-calorie-app-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -512,6 +515,7 @@
 				DEVELOPMENT_TEAM = 92UWWT3XL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "simple-calorie-app-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

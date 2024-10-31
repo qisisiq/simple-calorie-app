@@ -9,35 +9,40 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                
-                VStack(spacing: 20) {
-                    Button(action: { showingDatePicker = true }) {
-                        Text(selectedDate, format: .dateTime.month(.wide).year())
-                            .font(.title)
-                            .foregroundColor(.primary)
+            ZStack(alignment: .bottom) {
+                VStack {
+                    Spacer()
+                    
+                    VStack(spacing: 20) {
+                        Button(action: { showingDatePicker = true }) {
+                            Text(selectedDate, format: .dateTime.month(.wide).year())
+                                .font(.title)
+                                .foregroundColor(.primary)
+                        }
+                        
+                        CalendarGridView(
+                            date: selectedDate,
+                            store: store,
+                            onDateTap: { date in
+                                selectedDate = date
+                                showingCalorieInput = true
+                            }
+                        )
+                        
+                        HStack {
+                            Text("Daily Calorie Goal:")
+                            Button("\(store.calorieGoal)") {
+                                showingGoalInput = true
+                            }
+                        }
+                        .padding()
                     }
                     
-                    CalendarGridView(
-                        date: selectedDate,
-                        store: store,
-                        onDateTap: { date in
-                            selectedDate = date
-                            showingCalorieInput = true
-                        }
-                    )
-                    
-                    HStack {
-                        Text("Daily Calorie Goal:")
-                        Button("\(store.calorieGoal)") {
-                            showingGoalInput = true
-                        }
-                    }
-                    .padding()
+                    Spacer()
                 }
                 
-                Spacer()
+                MotivationalMessage()
+                    .padding(.bottom, 8)
             }
             .navigationBarHidden(true)
             .sheet(isPresented: $showingDatePicker) {
